@@ -46,7 +46,7 @@ public class RecyclerHomeAdapter extends RecyclerView.Adapter<RecyclerHomeAdapte
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
         User user = users.get(position);
-        Glide.with(context).load(user.getUrl()).placeholder(R.drawable.ic_circle).apply(new RequestOptions().circleCrop()).into(holder.userImg);
+        Glide.with(context).load(user.getUrl()).placeholder(R.drawable.ic_circle).error(R.drawable.ic_404_error).apply(new RequestOptions().circleCrop()).into(holder.userImg);
         holder.name.setText(user.getName());
         holder.age.setText("Age : "+user.getAge());
         holder.location.setText(user.getLocation());
